@@ -15,6 +15,15 @@ module.exports = {
           body: 'New lesson....',
           createdAt: new Date(),
           updatedAt: new Date()
+        },
+        {
+          id: 2,
+          title: 'Lesson Two',
+          section_id: 1,
+          order: 2,
+          body: 'New lesson....',
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}

@@ -1,9 +1,14 @@
+const courseFacade = require('#facades/course')
+
 module.exports = CoursesController
 
 function CoursesController() {
-  _getCourses = (req, res) => {
+  _getCourses = async (req, res) => {
+    const courses = await courseFacade.getCourses({ userId: req.token.id })
+
     res.send({
-      message: 'hello'
+      user: req.token.id,
+      courses: courses
     })
   }
 

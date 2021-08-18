@@ -14,6 +14,14 @@ module.exports = {
           order: 1,
           createdAt: new Date(),
           updatedAt: new Date()
+        },
+        {
+          id: 2,
+          title: 'Section Two',
+          course_id: 1,
+          order: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}
