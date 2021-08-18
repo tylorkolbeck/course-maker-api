@@ -13,6 +13,12 @@ const Course = database.define(
       required: true,
       allowNull: false,
       unique: false
+    },
+    public: {
+      type: DataTypes.BOOLEAN,
+      required: true,
+      allowNull: false,
+      defaultValue: false
     }
   },
   {
@@ -22,13 +28,6 @@ const Course = database.define(
 )
 
 // Static methods:
-// Course.associate = models => {
-// 	models.DisabledRefreshToken.belongsTo(models.User, {
-// 		foreignKey: "UserId",
-// 		as: 'user'
-// 	});
-// }
-
 Course.associate = (models) => {
   models.Course.belongsTo(models.User, {
     foreignKey: { name: 'user_id', allowNull: false },

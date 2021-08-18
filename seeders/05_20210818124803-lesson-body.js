@@ -2,24 +2,16 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('Lessons', {})
+    await queryInterface.bulkDelete('LessonBodies', {})
 
     await queryInterface.bulkInsert(
-      'Lessons',
+      'LessonBodies',
       [
         {
           id: 1,
-          title: 'Lesson One',
-          section_id: 1,
-          order: 1,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          id: 2,
-          title: 'Lesson Two',
-          section_id: 1,
-          order: 2,
+          body: 'Lesson One Body',
+          lesson_id: 1,
+          user_id: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         }

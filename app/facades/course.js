@@ -17,9 +17,14 @@ async function _getCourses({ userId }) {
       include: {
         model: Section,
         as: 'sections',
-        include: { model: Lesson, as: 'lessons' }
+        include: {
+          model: Lesson,
+          as: 'lessons'
+        }
       }
     })
+
+    // Add lesson body as another model to associate
 
     return Promise.resolve(courses)
   } catch (error) {

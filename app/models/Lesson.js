@@ -17,11 +17,6 @@ const Lesson = database.define(
     order: {
       type: DataTypes.INTEGER,
       allowNull: false
-    },
-    body: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      defaultValue: 'Start lesson content...'
     }
   },
   {
@@ -32,7 +27,12 @@ const Lesson = database.define(
 
 // Static methods:
 
-Lesson.associate = (models) => {}
+Lesson.associate = (models) => {
+  models.Lesson.hasOne(models.LessonBody, {
+    foreignKey: { name: 'lesson_id', allowNull: false },
+    onDelete: 'CASCADE'
+  })
+}
 
 // Instance methods:
 

@@ -6,4 +6,6 @@ require('#models/DisabledRefreshToken')
 require('#models/Course')
 require('#models/Section')
 require('#models/Lesson')
+require('#models/LessonBody')
+
 // Add your models here ...
