@@ -29,7 +29,17 @@ const Course = database.define(
 // 	});
 // }
 
-Course.associate = (models) => {}
+Course.associate = (models) => {
+  models.Course.belongsTo(models.User, {
+    foreignKey: { name: 'user_id', allowNull: false },
+    as: 'user'
+  })
+
+  models.Course.hasMany(models.Section, {
+    foreignKey: { name: 'course_id', allowNull: false },
+    as: 'sections'
+  })
+}
 
 // Instance methods:
 

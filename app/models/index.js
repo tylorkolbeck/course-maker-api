@@ -4,4 +4,6 @@
 require('./User')
 require('./DisabledRefreshToken')
 require('./Course')
+require('./Section')
+require('./Lesson')
 // Add your models here ...
