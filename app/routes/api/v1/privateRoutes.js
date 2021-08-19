@@ -1,4 +1,6 @@
 module.exports = {
   'GET /users/name': 'UsersController.getFullName',
-  'GET /Courses': 'CoursesController.getCourses'
+  'GET /courses': 'CoursesController.getCourses',
+  'GET /courses/:id': 'CoursesController.getCourse',
+  'POST /sections': 'SectionsController.addSection'
 }

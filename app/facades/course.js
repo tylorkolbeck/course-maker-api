@@ -5,7 +5,8 @@ const Lesson = require('#models/Lesson')
 const { Err } = require('#factories/errors')
 
 module.exports = {
-  getCourses: _getCourses
+  getCourses: _getCourses,
+  getCourse: _getCourse
 }
 
 async function _getCourses({ userId }) {
@@ -13,6 +14,22 @@ async function _getCourses({ userId }) {
     const courses = await Course.findAll({
       where: {
         user_id: userId
+      }
+    })
+
+    return Promise.resolve(courses)
+  } catch (error) {
+    console.log(error)
+    return Promise.reject(error)
+  }
+}
+
+async function _getCourse(courseId, user_id) {
+  try {
+    const course = await Course.findOne({
+      where: {
+        id: courseId,
+        user_id: user_id
       },
       include: {
         model: Section,
@@ -24,10 +41,9 @@ async function _getCourses({ userId }) {
       }
     })
 
-    // Add lesson body as another model to associate
-
-    return Promise.resolve(courses)
+    return Promise.resolve(course)
   } catch (error) {
     console.log(error)
+    return Promise.reject(error)
   }
 }

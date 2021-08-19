@@ -45,7 +45,9 @@ function DBService(environment) {
       await _associateModels(models)
 
       console.info(
-        `Database info: ${Object.keys(models).length} models associated.`
+        `Database info: ${
+          Object.keys(models).length
+        } models associated with sequelize.`
       )
       console.info(
         '\x1b[1m',
