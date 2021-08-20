@@ -24,6 +24,13 @@ module.exports = {
           password: bcryptService.hashPassword({ password: 'password' }),
           createdAt: new Date(),
           updatedAt: new Date()
+        },
+        {
+          id: 2,
+          email: 'test2@test.com',
+          password: bcryptService.hashPassword({ password: 'password' }),
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}

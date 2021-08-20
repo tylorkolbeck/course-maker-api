@@ -22,6 +22,13 @@ module.exports = {
           user_id: 1,
           createdAt: new Date(),
           updatedAt: new Date()
+        },
+        {
+          id: 2,
+          title: 'Course Two',
+          user_id: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
       ],
       {}

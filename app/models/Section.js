@@ -31,6 +31,10 @@ Section.associate = (models) => {
     foreignKey: { name: 'section_id', allowNull: false },
     as: 'lessons'
   })
+
+  models.Section.belongsTo(models.User, {
+    foreignKey: { name: 'user_id', allowNull: false }
+  })
 }
 
 // Instance methods:
